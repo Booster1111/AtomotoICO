@@ -6,17 +6,6 @@
 ![Untitled](https://user-images.githubusercontent.com/89033750/161400353-2983d277-eb7d-4025-a7d4-b7bfd7621b9a.png)
 ![Untitled1](https://user-images.githubusercontent.com/89033750/161400355-905ead66-9263-4ae6-b75e-bd98dd44ca65.png)
 
-### Connect to MetaMask
-
-![https://gyazo.com/73e88806e52c1b70211dd4911bf5a4af.gif](https://gyazo.com/73e88806e52c1b70211dd4911bf5a4af.gif)
-
-### Buy tokens
-
-Place an order
-![https://gyazo.com/d6361cc2a18ca3140f2aa9b09fc385ca.gif](https://gyazo.com/d6361cc2a18ca3140f2aa9b09fc385ca.gif)
-Buy with MetaMask and wait for confirmation.
-![https://gyazo.com/924565f84487b15f6c391f7a6378de57.gif](https://gyazo.com/924565f84487b15f6c391f7a6378de57.gif)
-
 ## Features
 
 - ⚡️ React TypeScript template with [Vite 2](https://vitejs.dev/)
