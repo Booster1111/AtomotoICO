@@ -1,18 +1,10 @@
-# Welcome to dapp-token-ico 👋
-
-![Version](https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
-[![Twitter: jellydn](https://img.shields.io/twitter/follow/jellydn.svg?style=social)](https://twitter.com/jellydn)
+# Welcome to ATO-token-ico 👋
 
 > Opinionated Dapp Starter Template
 
-## 🏠 [Homepage](https://dapp-token-ico.productsway.com)
-
-## ✨ [Demo](https://dapp-token-ico.productsway.com)
-
 ## Screenshot
-
-![./screenshot.png](./screenshot.png)
+![Untitled](https://user-images.githubusercontent.com/89033750/161400353-2983d277-eb7d-4025-a7d4-b7bfd7621b9a.png)
+![Untitled1](https://user-images.githubusercontent.com/89033750/161400355-905ead66-9263-4ae6-b75e-bd98dd44ca65.png)
 
 ### Connect to MetaMask
 
@@ -28,9 +20,8 @@ Buy with MetaMask and wait for confirmation.
 ## Features
 
 - ⚡️ React TypeScript template with [Vite 2](https://vitejs.dev/)
-- 📦 [Hardhat](https://hardhat.org/) - Ethereum development environment for professionals
-- 🦾 [TypeChain Hardhat plugin](https://github.com/ethereum-ts/TypeChain/tree/master/packages/hardhat) - Automatically generate TypeScript bindings for smartcontracts while using Hardhat.
-- 🔥 [web3-react](https://github.com/NoahZinsmeister/web3-react/) - A simple, maximally extensible, dependency minimized framework for building modern Ethereum dApps
+- 📦 [Hardhat](https://hardhat.org/) - BSC development environment for professionals
+- 🔥 [web3-react](https://github.com/NoahZinsmeister/web3-react/) - A simple, maximally extensible, dependency minimized framework for building modern BSC DApps
 - 🎨 [daisyUI Tailwind CSS Components](https://daisyui.com/) - clean HTML with component classes
 - 🎨 [OpenZeppelin](https://docs.openzeppelin.com/contracts/4.x/) - standard for secure blockchain applications
 
@@ -57,11 +48,11 @@ yarn test
 Create .env from .env.example from root directory. Remember to fill the value for deployed addresses.
 
 ```
-ETHERSCAN_API_KEY=ABC123ABC123ABC123ABC123ABC123ABC1
-ROPSTEN_PROVIDER_URL=https://eth-ropsten.alchemyapi.io/v2/<YOUR ALCHEMY KEY>
+BSCSCAN_API_KEY="login to bsc and get api key"
 PRIVATE_KEY=<YOUR PRIVATE KEY>
 VITE_CROWDSALE_ADDRESS=<YOUR DEPLOYED SMART CONTRACT ADDRESS>
 VITE_PROVIDER_URL=https://eth-ropsten.alchemyapi.io/v2/<YOUR ALCHEMY KEY>
+VITE_BSC_TESTNET=
 ```
 
 Then deploy to specific network, e.g: Ropsten
@@ -73,7 +64,7 @@ npx hardhat run scripts/deploy_ATOMOTOScrowdsale.js --network ropsten
 Output:
 
 ```sh
-Generating typings for: 0 artifacts in dir: src/types for target: ethers-v5
+Generating typings for: 0 artifacts in dir: src/types for target: 
 Successfully generated 3 typings!
 Successfully generated 3 typings for external artifacts!
 ATOMOTOSToken deployed to: 0x589e9B37053b140D969d5fCECC53daDcC630B1c4
@@ -130,8 +121,6 @@ Successfully submitted source code for contract
 contracts/ATOMOTOSCrowdsale.sol:ATOMOTOSTokenCrowdsale at 0x03266CA60258461A9F66Ea8498D4
 for verification on Etherscan. Waiting for verification result...
 
-Successfully verified contract ATOMOTOSCrowdsale on Etherscan.
-https://ropsten.etherscan.io/address/0x03266CA60258461A9F66Ea8498D4#code
 ```
 
 ## Hardhat guideline
@@ -161,22 +150,6 @@ npx solhint 'contracts/**/*.sol'
 npx solhint 'contracts/**/*.sol' --fix
 ```
 
-## Etherscan verification
-
-To try out Etherscan verification, you first need to deploy a contract to an Ethereum network that's supported by Etherscan, such as Ropsten.
-
-In this project, copy the .env.example file to a file named .env, and then edit it to fill in the details. Enter your Etherscan API key, your Ropsten node URL (eg from Alchemy), and the private key of the account which will send the deployment transaction. With a valid .env file in place, first deploy your contract:
-
-```shell
-npx hardhat run --network ropsten scripts/deploy_greeter.js
-```
-
-Then, copy the deployment address and paste it in to replace `DEPLOYED_CONTRACT_ADDRESS` in this command:
-
-```shell
-npx hardhat verify --network ropsten DEPLOYED_CONTRACT_ADDRESS "Hello, Hardhat!"
-```
-
 ## Contract upgrade
 
 OpenZeppelin provides tooling for deploying and securing [upgradeable smart contracts](https://docs.openzeppelin.com/learn/upgrading-smart-contracts).
@@ -193,30 +166,3 @@ Then, deploy the upgrade smart contract
 
 ```shell
 npx hardhat run --network localhost scripts/upgrade_box.js
-```
-
-## Examples
-
-- [Simple Store App](https://github.com/jellydn/dapp-starter/pull/20): counter-like smart contract, read/write value and listen to event from smart contract.
-
-## Author
-
-👤 **Dung Huynh**
-
-- Website: https://productsway.com/
-- Twitter: [@jellydn](https://twitter.com/jellydn)
-- Github: [@jellydn](https://github.com/jellydn)
-
-## Stargazers 🌟
-
-[![Stargazers repo roster for jellydn/dapp-token-ico](https://reporoster.com/stars/jellydn/dapp-token-ico)](https://github.com/jellydn/dapp-token-ico/stargazers)
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Q5Q61Q7YM)
-
----
-
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
