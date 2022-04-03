@@ -20,7 +20,7 @@ function App() {
           <Demo />
           <ICOToken crowdsaleAddress={crowdsaleAddress} />
 
-          <footer className="p-10 footer bg-base-200 text-base-content">
+          {/* <footer className="p-10 footer bg-base-200 text-base-content">
             <div>
               <p>
                 ProductsWay
@@ -65,7 +65,7 @@ function App() {
                 <img src="https://vercel.com/button" alt="Deploy with Vercel" />
               </a>
             </div>
-          </footer>
+          </footer> */}
         </div>
         <ReactQueryDevtools initialIsOpen={false} />
         <Toaster position="top-right" />

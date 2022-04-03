@@ -5,11 +5,11 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { useQuery } from "react-query";
 
-import ITManTokenArtifacts from "./artifacts/contracts/ITManToken.sol/ITManToken.json";
-import ITManTokenCrowdsaleArtifacts from "./artifacts/contracts/ITManTokenCrowdsale.sol/ITManTokenCrowdsale.json";
+import ATOMOTOSTokenArtifacts from "./artifacts/contracts/ATOMOTOSToken.sol/ATOMOTOSToken.json";
+import ATOMOTOSTokenCrowdsaleArtifacts from "./artifacts/contracts/ATOMOTOSTokenCrowdsale.sol/ATOMOTOSTokenCrowdsale.json";
 import logger from "./logger";
-import { ITManToken } from "./types/ITManToken";
-import { ITManTokenCrowdsale } from "./types/ITManTokenCrowdsale";
+import { ATOMOTOSToken } from "./types/ATOMOTOSToken";
+import { ATOMOTOSTokenCrowdsale } from "./types/ATOMOTOSTokenCrowdsale";
 
 interface Props {
   crowdsaleAddress: string;
@@ -29,7 +29,7 @@ const TokenInfo = ({ tokenAddress }: { tokenAddress: string }) => {
   const fetchTokenInfo = async () => {
     logger.warn("fetchTokenInfo");
     const provider = library || new ethers.providers.Web3Provider(window.ethereum || providerUrl);
-    const tokenContract = new ethers.Contract(tokenAddress, ITManTokenArtifacts.abi, provider) as ITManToken;
+    const tokenContract = new ethers.Contract(tokenAddress, ATOMOTOSTokenArtifacts.abi, provider) as ATOMOTOSToken;
     const name = await tokenContract.name();
     const symbol = await tokenContract.symbol();
     const decimals = await tokenContract.decimals();
@@ -52,8 +52,8 @@ const TokenInfo = ({ tokenAddress }: { tokenAddress: string }) => {
   return (
     <div className="flex flex-col">
       <button className="btn">
-        {data?.name}
-        <div className="ml-2 badge">{data?.symbol}</div>
+        ATOMOTOSTOKEN
+        <div className="ml-2 badge">ATO</div>
         <div className="ml-2 badge badge-info">{data?.decimals}</div>
       </button>
 
@@ -87,9 +87,9 @@ const ICOToken = ({ crowdsaleAddress }: Props) => {
     const provider = library || new ethers.providers.Web3Provider(window.ethereum || providerUrl);
     const contract = new ethers.Contract(
       crowdsaleAddress,
-      ITManTokenCrowdsaleArtifacts.abi,
+      ATOMOTOSTokenCrowdsaleArtifacts.abi,
       provider
-    ) as ITManTokenCrowdsale;
+    ) as ATOMOTOSTokenCrowdsale;
     contract.token().then(setTokenAddress).catch(logger.error);
     contract
       .remainingTokens()
@@ -146,7 +146,7 @@ const ICOToken = ({ crowdsaleAddress }: Props) => {
   const totalCost = (1 / Number(price)) * amount;
   return (
     <div className="relative py-3 sm:max-w-5xl sm:mx-auto">
-      {chainId !== 3 && (
+      {/* {chainId !== 3 && (
         <>
           <div className="alert">
             <div className="flex-1">
@@ -164,19 +164,19 @@ const ICOToken = ({ crowdsaleAddress }: Props) => {
                   d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"
                 />
               </svg>
-              <label>Please connect to the Ropsten testnet for testing.</label>
+              <label>Please connect to the BSC testnet for testing.</label>
             </div>
           </div>
           <div className="divider"></div>
         </>
-      )}
+      )} */}
 
       <div className="flex items-center w-full px-4 py-10 bg-cover card bg-base-200">
         <TokenInfo tokenAddress={tokenAddress} />
 
         <div className="text-center shadow-2xl card">
           <div className="card-body">
-            <h2 className="card-title">ITMan Token</h2>
+            <h2 className="card-title">Atomotos Token</h2>
             {Number(closingTime) > 0 && (
               <div className="alert">
                 <div className="flex-1">
@@ -227,7 +227,7 @@ const ICOToken = ({ crowdsaleAddress }: Props) => {
                   Buy Now
                 </button>
               </div>
-              <div className="badge badge-md">Total: {totalCost} ETH</div>
+              <div className="badge badge-md">Total: {totalCost} BNB</div>
             </div>
           </div>
         </div>
@@ -242,7 +242,7 @@ const ICOToken = ({ crowdsaleAddress }: Props) => {
               className="px-4 py-1 ml-2 text-white bg-orange-500 rounded-full shadow focus:outline-none"
               rel="noreferrer"
             >
-              View Token on Etherscan
+              View Token on BSCSCAN
             </a>
           </div>
         </div>

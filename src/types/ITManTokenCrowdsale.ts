@@ -18,7 +18,7 @@ import {
   utils,
 } from "ethers";
 
-export interface ITManTokenCrowdsaleInterface extends utils.Interface {
+export interface ATOMOTOSTokenCrowdsaleInterface extends utils.Interface {
   functions: {
     "buyTokens(address)": FunctionFragment;
     "closingTime()": FunctionFragment;
@@ -110,12 +110,12 @@ export type TokensPurchasedEvent = TypedEvent<
 
 export type TokensPurchasedEventFilter = TypedEventFilter<TokensPurchasedEvent>;
 
-export interface ITManTokenCrowdsale extends BaseContract {
+export interface ATOMOTOSTokenCrowdsale extends BaseContract {
   connect(signerOrProvider: Signer | Provider | string): this;
   attach(addressOrName: string): this;
   deployed(): Promise<this>;
 
-  interface: ITManTokenCrowdsaleInterface;
+  interface: ATOMOTOSTokenCrowdsaleInterface;
 
   queryFilter<TEvent extends TypedEvent>(
     event: TypedEventFilter<TEvent>,

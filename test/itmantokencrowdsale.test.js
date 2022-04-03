@@ -27,43 +27,43 @@ const duration = {
   },
 };
 
-describe("ITManTokenCrowdsale", () => {
-  it("Should have 70% of ITManToken tokens", async () => {
-    const ITManToken = await ethers.getContractFactory("ITManToken");
-    const itManToken = await ITManToken.deploy();
-    await itManToken.deployed();
+describe("ATOMOTOSTokenCrowdsale", () => {
+  it("Should have 70% of ATOMOTOSToken tokens", async () => {
+    const ATOMOTOSToken = await ethers.getContractFactory("ATOMOTOSToken");
+    const ATOMOTOSToken = await ATOMOTOSToken.deploy();
+    await ATOMOTOSToken.deployed();
 
-    expect(await itManToken.name()).to.equal("ITManToken");
-    expect(await itManToken.symbol()).to.equal("ITM");
-    expect(await itManToken.decimals()).to.equal(18);
-    const totalSupply = await itManToken.totalSupply();
+    expect(await ATOMOTOSToken.name()).to.equal("ATOMOTOSToken");
+    expect(await ATOMOTOSToken.symbol()).to.equal("ITM");
+    expect(await ATOMOTOSToken.decimals()).to.equal(18);
+    const totalSupply = await ATOMOTOSToken.totalSupply();
     expect(totalSupply).to.equal(ethers.BigNumber.from("1000000000000000000000000"));
-    const owner = await itManToken.owner();
+    const owner = await ATOMOTOSToken.owner();
 
     const latestBlockTime = await latestTime();
     const openingTime = latestBlockTime + duration.minutes(1);
     const closeTime = openingTime + duration.weeks(1); // 1 week
 
-    const ITManTokenCrowdsale = await ethers.getContractFactory("ITManTokenCrowdsale");
+    const ATOMOTOSTokenCrowdsale = await ethers.getContractFactory("ATOMOTOSTokenCrowdsale");
     const rate = 500; // 500 wei per token
-    const itManTokenCrowdsale = await ITManTokenCrowdsale.deploy(
+    const ATOMOTOSTokenCrowdsale = await ATOMOTOSTokenCrowdsale.deploy(
       rate,
       owner,
-      itManToken.address,
+      ATOMOTOSToken.address,
       owner,
       openingTime,
       closeTime
     );
 
-    await itManTokenCrowdsale.deployed();
+    await ATOMOTOSTokenCrowdsale.deployed();
 
-    await itManToken.approve(
-      itManTokenCrowdsale.address,
+    await ATOMOTOSToken.approve(
+      ATOMOTOSTokenCrowdsale.address,
       totalSupply.mul(ethers.BigNumber.from(70)).div(ethers.BigNumber.from(100))
     );
 
-    expect(await itManTokenCrowdsale.rate()).to.equal(rate);
-    expect(await itManTokenCrowdsale.remainingTokens()).to.equal(ethers.BigNumber.from("700000000000000000000000"));
+    expect(await ATOMOTOSTokenCrowdsale.rate()).to.equal(rate);
+    expect(await ATOMOTOSTokenCrowdsale.remainingTokens()).to.equal(ethers.BigNumber.from("700000000000000000000000"));
   });
   // TODO: add unit test for time validation
   // TODO: add unit test for token allocation

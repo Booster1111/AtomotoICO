@@ -19,7 +19,7 @@ import {
   utils,
 } from "ethers";
 
-export interface ITManTokenInterface extends utils.Interface {
+export interface ATOMOTOSTokenInterface extends utils.Interface {
   functions: {
     "allowance(address,address)": FunctionFragment;
     "approve(address,uint256)": FunctionFragment;
@@ -151,12 +151,12 @@ export type TransferEvent = TypedEvent<
 
 export type TransferEventFilter = TypedEventFilter<TransferEvent>;
 
-export interface ITManToken extends BaseContract {
+export interface ATOMOTOSToken extends BaseContract {
   connect(signerOrProvider: Signer | Provider | string): this;
   attach(addressOrName: string): this;
   deployed(): Promise<this>;
 
-  interface: ITManTokenInterface;
+  interface: ATOMOTOSTokenInterface;
 
   queryFilter<TEvent extends TypedEvent>(
     event: TypedEventFilter<TEvent>,

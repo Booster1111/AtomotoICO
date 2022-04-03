@@ -1,36 +1,36 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
-describe("ITManToken", () => {
+describe("ATOMOTOSToken", () => {
   it("Should return the token name", async () => {
-    const ITManToken = await ethers.getContractFactory("ITManToken");
-    const itManToken = await ITManToken.deploy();
-    await itManToken.deployed();
+    const ATOMOTOSToken = await ethers.getContractFactory("ATOMOTOSToken");
+    const ATOMOTOSToken = await ATOMOTOSToken.deploy();
+    await ATOMOTOSToken.deployed();
 
-    expect(await itManToken.name()).to.equal("ITManToken");
+    expect(await ATOMOTOSToken.name()).to.equal("ATOMOTOSToken");
   });
 
   it("Should return the token symbol", async () => {
-    const ITManToken = await ethers.getContractFactory("ITManToken");
-    const itManToken = await ITManToken.deploy();
-    await itManToken.deployed();
+    const ATOMOTOSToken = await ethers.getContractFactory("ATOMOTOSToken");
+    const ATOMOTOSToken = await ATOMOTOSToken.deploy();
+    await ATOMOTOSToken.deployed();
 
-    expect(await itManToken.symbol()).to.equal("ITM");
+    expect(await ATOMOTOSToken.symbol()).to.equal("ITM");
   });
 
   it("Should return decimals", async () => {
-    const ITManToken = await ethers.getContractFactory("ITManToken");
-    const itManToken = await ITManToken.deploy();
-    await itManToken.deployed();
+    const ATOMOTOSToken = await ethers.getContractFactory("ATOMOTOSToken");
+    const ATOMOTOSToken = await ATOMOTOSToken.deploy();
+    await ATOMOTOSToken.deployed();
 
-    expect(await itManToken.decimals()).to.equal(18);
+    expect(await ATOMOTOSToken.decimals()).to.equal(18);
   });
 
   it("Should have total supply", async () => {
-    const ITManToken = await ethers.getContractFactory("ITManToken");
-    const itManToken = await ITManToken.deploy();
-    await itManToken.deployed();
+    const ATOMOTOSToken = await ethers.getContractFactory("ATOMOTOSToken");
+    const ATOMOTOSToken = await ATOMOTOSToken.deploy();
+    await ATOMOTOSToken.deployed();
 
-    expect(await itManToken.totalSupply()).to.equal(ethers.BigNumber.from("1000000000000000000000000"));
+    expect(await ATOMOTOSToken.totalSupply()).to.equal(ethers.BigNumber.from("1000000000000000000000000"));
   });
 });

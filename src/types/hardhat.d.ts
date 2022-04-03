@@ -49,13 +49,13 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Greeter__factory>;
     getContractFactory(
-      name: "ITManToken",
+      name: "ATOMOTOSToken",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ITManToken__factory>;
+    ): Promise<Contracts.ATOMOTOSToken__factory>;
     getContractFactory(
-      name: "ITManTokenCrowdsale",
+      name: "ATOMOTOSTokenCrowdsale",
       signerOrOptions?: ethers.Signer | FactoryOptions
-    ): Promise<Contracts.ITManTokenCrowdsale__factory>;
+    ): Promise<Contracts.ATOMOTOSTokenCrowdsale__factory>;
     getContractFactory(
       name: "TimedCrowdsale",
       signerOrOptions?: ethers.Signer | FactoryOptions
@@ -107,15 +107,15 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.Greeter>;
     getContractAt(
-      name: "ITManToken",
+      name: "ATOMOTOSToken",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.ITManToken>;
+    ): Promise<Contracts.ATOMOTOSToken>;
     getContractAt(
-      name: "ITManTokenCrowdsale",
+      name: "ATOMOTOSTokenCrowdsale",
       address: string,
       signer?: ethers.Signer
-    ): Promise<Contracts.ITManTokenCrowdsale>;
+    ): Promise<Contracts.ATOMOTOSTokenCrowdsale>;
     getContractAt(
       name: "TimedCrowdsale",
       address: string,

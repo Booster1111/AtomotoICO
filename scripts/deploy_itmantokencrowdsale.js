@@ -41,42 +41,42 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  const ITManToken = await ethers.getContractFactory("ITManToken");
-  const itManToken = await ITManToken.deploy();
+  const ATOMOTOSToken = await ethers.getContractFactory("ATOMOTOSToken");
+  const ATOMOTOSToken = await ATOMOTOSToken.deploy();
 
-  await itManToken.deployed();
-  console.log("ITManToken deployed to:", itManToken.address);
-  console.log("Name", await itManToken.name());
-  console.log("Symbol", await itManToken.symbol());
-  console.log("Decimals", await itManToken.decimals());
-  const totalSupply = await itManToken.totalSupply();
+  await ATOMOTOSToken.deployed();
+  console.log("ATOMOTOSToken deployed to:", ATOMOTOSToken.address);
+  console.log("Name", await ATOMOTOSToken.name());
+  console.log("Symbol", await ATOMOTOSToken.symbol());
+  console.log("Decimals", await ATOMOTOSToken.decimals());
+  const totalSupply = await ATOMOTOSToken.totalSupply();
   console.log("Total Supply", totalSupply);
-  const owner = await itManToken.owner();
+  const owner = await ATOMOTOSToken.owner();
   console.log("Owner", owner);
 
   // deploy crowdsale contract
-  const ITManTokenCrowdsale = await ethers.getContractFactory("ITManTokenCrowdsale");
+  const ATOMOTOSTokenCrowdsale = await ethers.getContractFactory("ATOMOTOSTokenCrowdsale");
   const rate = 500; // 500 wei per token
   const latestBlockTime = await latestTime();
   const openingTime = latestBlockTime + duration.minutes(1);
   const closeTime = openingTime + duration.weeks(1); // 1 week
   console.log("openingTime", openingTime);
   console.log("closeTime", closeTime);
-  const itManTokenCrowdsale = await ITManTokenCrowdsale.deploy(
+  const ATOMOTOSTokenCrowdsale = await ATOMOTOSTokenCrowdsale.deploy(
     rate,
     owner,
-    itManToken.address,
+    ATOMOTOSToken.address,
     owner,
     openingTime,
     closeTime
   );
 
-  await itManTokenCrowdsale.deployed();
-  console.log("ITManTokenCrowdsale deployed to:", itManTokenCrowdsale.address);
+  await ATOMOTOSTokenCrowdsale.deployed();
+  console.log("ATOMOTOSTokenCrowdsale deployed to:", ATOMOTOSTokenCrowdsale.address);
 
   // approve crowdsale contract to spend 70% tokens
-  await itManToken.approve(
-    itManTokenCrowdsale.address,
+  await ATOMOTOSToken.approve(
+    ATOMOTOSTokenCrowdsale.address,
     totalSupply.mul(ethers.BigNumber.from(70)).div(ethers.BigNumber.from(100))
   );
 }
